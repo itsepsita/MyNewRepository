@@ -1,0 +1,28 @@
+<p>product works!</p>
+
+<form #contactForm ="ngForm"  (ngSubmit)="onSubmit(contactForm)">
+    <p>
+      <label for="firstname">First Name</label>
+      <input type="text" name="firstname"  required minlength="3" #firstname='ngModel' pattern="^[a-zA-Z]+$" ngModel>
+    </p>
+    <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname.touched)">
+       Invalid First name
+      <div *ngIf="firstname?.errors.required">
+        Firstname is required
+      </div>
+      <div *ngIf="firstname?.errors.minlength">
+        Firstname minimum length is 3
+      </div>
+    </div>
+    <p>
+      <label for="lastname">Last Name</label>
+      <input type="text" name="lastname" required maxlength="4" pattern="^[a-zA-Z]+$" ngModel>
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input type="text" name="email" required email ngModel>
+    </p>
+    <p>
+      <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+    </p>
+  </form>

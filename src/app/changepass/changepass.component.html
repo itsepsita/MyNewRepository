@@ -1,0 +1,8 @@
+<p>changepass works!</p>
+
+Old Password <input type="password" [(ngModel)]="oldpass" placeholder="oldpass"><br>
+New Password <input type="password" [(ngModel)]="newpass" placeholder="newpass"><br>
+Confirm Password <input type="password" [(ngModel)]="confirmpass" placeholder="confirmpass"><br>
+<button (click)="verifyPassword()">Verify</button>
+<span [class]="spanStyle">{{ message }}</span>
+

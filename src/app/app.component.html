@@ -1,0 +1,147 @@
+<!--<div style="text-align: center;">
+<h1>
+{{title}}
+</h1>
+<p>
+  The logged user is {{username}}
+  <button (click)="function()">Click me</button>
+</p>
+</div>
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+      $scope.names = ["Fruit", "Pen", "Mobile"];
+  });
+  </script>
+<table>
+ <tr> <td>ID</td><td><input type="text" [(ngModel)]="id"></td></tr>
+<tr>  <td>Name</td><td><input type="text" [(ngModel)]="name"></td></tr>
+ <tr> <td>Price</td><td><input type="text" [(ngModel)]="price"></td></tr>
+  <tr><td>Category</td><td><select name="demo" [(ngModel)]="category">
+    <option selected="selected" value="Fruits">Fruits</option>
+    <option value="Pen">Pen</option>
+    <option value="Mobile">Mobile</option>
+    </select></td></tr>
+  <tr><td><button (click) ="clicked()">Add Product</button></td></tr>
+</table>
+<br><br>
+<table border="1" style="border-style:solid; width:30%; border-collapse: collapse;">
+  <thread style ="background-color: greenyellow;" >
+<th>Name</th>
+<th>Price</th>
+<th>Category</th></thread>
+<th>Item id</th>
+<tr *ngFor ="let f of itemList">
+    <td>{{f.id}}</td>
+    <td>{{f.name}}</td>
+    <td>{{f.price}}</td>
+    <td>{{f.category}}</td>
+    
+</tr>
+</table>
+
+<p>
+  The logged in user is {{username | uppercase}}
+  <br> Lowercase pipe {{textGiven|lowercase}}<br>
+  Logged in @{{logDate | date:'shortTime'}}<br>
+  Logged in @{{logDate | date:'medium'}}<br>
+  Logged in @{{logDate | date:'fullDate'}}<br>
+  Logged in @{{logDate | date:'d/M/y'}}<br>
+
+  Currency{{number1 | currency}}<br>
+  Currency{{number1 | currency:'EUR'}}<br>
+  Currency{{number1 | currency:'CAD'}}<br>
+  Currency{{number1 | currency:'JPV'}}<br>
+  Currency{{number1 | currency:'EUR':'symbol':'4,2-2'}}<br>
+</p>
+<app-login></app-login>-->
+
+<!--<div style="text-align: center;">
+<h1>
+  {{title}}
+</h1>
+</div>
+<br>
+
+<select [(ngModel)] ="itemCategory">
+  
+  <option *ngFor ="let i of itemList" [value]="i.id">
+    {{i.name}}
+  </option>
+</select>
+ <br>Item Selected {{itemCategory}}
+<div *ngIf="itemCategory"></div>
+<div class="row" [ngSwitch] ="itemCategory">
+  <div *ngSwitchCase ="fruit"> Fruit Selected</div>
+  <div *ngSwitchCase="mobile">Mobile Selected</div>
+  <div *ngSwitchDefault>Not Selected...</div>
+</div>
+
+<div [ngSwitch] ="myvar">
+  <p *ngSwitchCase ="'kt'"> Keto Diet</p>
+  <p *ngSwitchCase ="'veg'"> Veg Diet</p>
+  <p *ngSwitchCase ="'pt'"> Paleo Diet</p>
+  <p *ngSwitchDefault> Standard Diet</p>
+
+</div>
+<p *ngIf="showp;else elseBlock">
+  This is based on true ngIF
+</p>
+<ng-template #elseBlock>
+  This is based on false ngIf
+</ng-template>
+
+<ul>
+  <li *ngFor = "let c of countries">
+    <span *ngIf="c.indexOf('i')>-1;else elseBlock" style="color: green;">
+      {{c}}
+    </span>
+    <ng-template #elseBlock>
+      <span style="color:blue;">
+        {{c}}
+      </span>
+    </ng-template> 
+  </li>
+</ul>
+
+<select [(ngModel)] ="month">
+  
+  <option *ngFor ="let i of months" value={{i}}>
+    {{i}}
+  </option>
+</select>
+ <br> 
+
+
+<div class="switch" [ngSwitch] ="month">
+  
+<p *ngSwitchCase="'January'">31 days</p>
+<p *ngSwitchCase="'February'">
+  <input type="text" [(ngModel)]="year"><br>
+  <button (click)="leapyear()">check if leap year</button><br>
+  <span>{{feb}}</span>
+</p>
+<p *ngSwitchCase="'March'">31 days</p>
+<p *ngSwitchCase="'April'">30 days</p>
+<p *ngSwitchCase="'May'">31 days</p>
+<p *ngSwitchCase="'June'">30 days</p>
+<p *ngSwitchCase="'July'">31days</p>
+<p *ngSwitchCase="'August'">31days</p>
+<p *ngSwitchCase="'September'">31days</p>
+<p *ngSwitchCase="'October'">31days</p>
+<p *ngSwitchCase="'November'">31days</p>
+<p *ngSwitchCase="'December'">31days</p>
+</div>
+
+ 
+
+<div style="text-align: center">
+  <h1>
+    {{title}}
+  </h1></div>
+  <a routerLink="login" class="btn btn-primary">Login</a>
+
+  <br>
+
+<router-outlet></router-outlet>
+<app-changepass></app-changepass>-->

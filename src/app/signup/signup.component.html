@@ -1,0 +1,33 @@
+<p>signup works!</p>
+<form [fromGroup]="contactForm" (ngSubmit) ="onSubmit()">
+    <p>
+        <label for="firstname"> FirstName</label>
+        <input type="text" id="firstname" name="firstname" formControlName="firstname">
+    </p>
+    <div *ngIf="!contactForm.controls.firstname?.valid && (contactForm.firstname?.dirty || firstname.touched)">
+        Invalid First name
+       <div *ngIf="firstname?.errors.required">
+         Firstname is required
+       </div>
+       <div *ngIf="firstname?.errors.minlength">
+         Firstname minimum length is 3
+       </div>
+     </div>
+    <p>
+        <label for="lastname"> LastName</label>
+        <input type="text" id="lastname" name="lastname" formControlName="lastname"> 
+    </p>
+    <p>
+        <label for="age"> Age</label>
+        <input type="text" id="age" name="age" formControlName="age"> 
+    </p>
+    <p>
+        <label for="city"> City</label>
+        <input type="text" id="city" name="city" formControlName="city"> 
+    </p>
+    <p>
+       <button type="submit">Submit</button>
+       <button type="reset">Reset</button>
+    </p>
+</form>
+<app-product></app-product>
